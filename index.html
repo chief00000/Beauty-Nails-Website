@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f9f3f1">
+<meta name="description" content="Discover elegant nail art, manicure inspiration, makeup looks, hairstyles, bridal beauty and seasonal beauty ideas at ROSEÉ, your personal beauty atelier.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://example.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ROSEÉ — The Beauty Atelier">
+<meta property="og:description" content="A curated world of nail art, beauty rituals, color stories and editorial inspiration.">
+<meta property="og:url" content="https://example.com/">
+<meta property="og:image" content="https://example.com/rose-beauty-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ROSEÉ — The Beauty Atelier">
+<meta name="twitter:description" content="Discover your next signature beauty look.">
+<title>ROSEÉ — The Beauty Atelier | Nail Art & Beauty Inspiration</title>
+<style>
+:root{
+ --paper:#fbf7f4;--white:#fffdfb;--rose:#bd7f8b;--rose-dark:#794652;
+ --mauve:#947888;--ink:#382b32;--muted:#796d73;--line:#eadbdc;
+ --gold:#b89a68;--blush:#f1e1e2;--sage:#dce4d9;--shadow:0 18px 55px #593b4610;
+ --serif:Georgia,"Times New Roman",serif;
+ --sans:Arial,Helvetica,sans-serif;--radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7}
+button,input,select,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:var(--rose-dark)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+img,svg{max-width:100%}
+.skip{position:absolute;left:-9999px;top:10px;background:white;padding:12px;z-index:99}
+.skip:focus{left:10px}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+.eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--rose-dark);font-weight:700}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.14;margin:0 0 16px}
+h1{font-size:clamp(46px,7.5vw,88px);letter-spacing:-2.7px}
+h2{font-size:clamp(32px,4.4vw,52px);letter-spacing:-1px}
+h3{font-size:25px}
+p{margin:0 0 16px}
+.muted{color:var(--muted)}
+.small{font-size:12px}
+.kicker{font-size:12px;letter-spacing:1px;text-transform:uppercase}
+.btn{border:1px solid var(--rose-dark);border-radius:99px;padding:12px 20px;display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:.5px;transition:.2s}
+.btn.primary{background:var(--rose-dark);color:white}
+.btn.secondary{background:transparent;color:var(--rose-dark)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #79465218}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+button.icon-btn{border:1px solid var(--line);background:#fffdfbdc;color:var(--rose-dark);border-radius:50%;width:39px;height:39px;display:inline-grid;place-items:center}
+header{position:sticky;top:0;z-index:20;background:#fbf7f4ed;backdrop-filter:blur(14px);border-bottom:1px solid #eadbdc9c}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand-mark{width:37px;height:37px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--rose-dark);font-family:var(--serif);font-size:23px;position:relative}
+.brand-mark:after{content:"";position:absolute;inset:4px;border:1px solid #b89a6866;border-radius:50%}
+.brand-name{font-family:var(--serif);font-size:26px;letter-spacing:4px;line-height:1}
+.brand-sub{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.navlinks{display:flex;align-items:center;gap:20px}
+.navlinks a{text-decoration:none;color:var(--ink);font-size:11px;letter-spacing:.5px}
+.navlinks a:hover{color:var(--rose-dark)}
+.nav-actions{display:flex;align-items:center;gap:9px}
+.menu-btn{display:none}
+.hero{padding:58px 0 48px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:54px}
+.hero-copy{padding:12px 0}
+.hero h1 em{font-weight:400;color:var(--rose);display:block}
+.hero-intro{max-width:550px;font-size:16px;color:var(--muted);line-height:1.9}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 28px}
+.hero-note{display:flex;align-items:center;gap:12px;font-size:11px;color:var(--muted)}
+.note-line{height:1px;width:42px;background:var(--gold)}
+.hero-art{position:relative;min-height:490px;border-radius:180px 180px 24px 24px;overflow:hidden;background:linear-gradient(150deg,#ead5d5,#f5e8e4 53%,#d6bdc8);box-shadow:var(--shadow)}
+.hero-art:before{content:"";position:absolute;width:76%;height:86%;left:12%;top:8%;border:1px solid #fff9;border-radius:49% 49% 8% 8%}
+.hero-art:after{content:"ROSEÉ  /  BEAUTY NOTES";position:absolute;bottom:22px;left:0;right:0;text-align:center;font-size:9px;letter-spacing:4px;color:#794652a8}
+.hero-oval{position:absolute;width:65%;height:77%;top:11%;left:18%;border-radius:48% 48% 40% 40%;background:linear-gradient(140deg,#f9e6dc,#c8959f 65%,#956879);box-shadow:inset -25px -10px 45px #78465326}
+.hero-petal{position:absolute;background:linear-gradient(130deg,#fff7f0,#c27f90);width:43%;height:28%;border-radius:100% 0 100% 0;transform:rotate(-27deg);left:13%;top:19%;opacity:.92}
+.hero-petal.p2{left:47%;top:34%;transform:rotate(62deg);background:linear-gradient(120deg,#f7d9d7,#a36b83)}
+.hero-petal.p3{left:27%;top:54%;transform:rotate(20deg);width:48%;height:25%;background:linear-gradient(130deg,#fcebe1,#b57b8d)}
+.hero-orbit{position:absolute;inset:13% 8%;border:1px solid #fff9;border-radius:50%;transform:rotate(-25deg)}
+.hero-sticker{position:absolute;right:4%;bottom:18%;background:var(--white);padding:17px 19px;border-radius:50%;width:105px;height:105px;display:grid;place-items:center;text-align:center;font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.2;transform:rotate(9deg);box-shadow:var(--shadow)}
+.trust-strip{border-block:1px solid var(--line);padding:19px 0}
+.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;text-align:center}
+.trust-grid div{font-size:10px;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted)}
+.trust-grid strong{color:var(--rose-dark);font-weight:700}
+section{padding:86px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}
+.section-head p{max-width:480px;color:var(--muted);margin:0}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.category-card{position:relative;min-height:225px;overflow:hidden;border-radius:var(--radius);padding:25px;display:flex;flex-direction:column;justify-content:end;text-decoration:none;color:var(--ink);background:var(--blush);transition:transform .25s}
+.category-card:hover{transform:translateY(-5px)}
+.category-card:nth-child(2){background:#e8dfe8}.category-card:nth-child(3){background:#e7e6da}
+.category-card:nth-child(4){background:#f0dfe0}.category-card:nth-child(5){background:#e6d5d2}.category-card:nth-child(6){background:#e7e2eb}
+.cat-number{position:absolute;top:19px;left:23px;font-size:10px;letter-spacing:2px;color:var(--rose-dark)}
+.cat-art{position:absolute;right:16px;top:16px;width:116px;height:116px;border:1px solid #fff9;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:47px;color:#794652a8;transform:rotate(-8deg)}
+.cat-art:before{content:"";position:absolute;inset:10px;border:1px solid #fff9;border-radius:50%}
+.category-card h3{font-size:26px;margin:0 0 7px;position:relative}
+.category-card p{font-size:12px;margin:0;color:#66575e;position:relative}
+.category-card .arrow{position:absolute;right:23px;bottom:24px;color:var(--rose-dark)}
+.generator-section{background:#f1e7e5}
+.generator-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:42px;align-items:start}
+.generator-copy{position:sticky;top:115px}
+.generator-copy p{color:var(--muted)}
+.generator-form,.result-card,.tool-card,.legal-card,.contact-card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:27px;box-shadow:var(--shadow)}
+.field-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+.field label{font-size:11px;font-weight:700;letter-spacing:.5px}
+.field select,.field input,.field textarea,.search-input{width:100%;border:1px solid #dfcccf;background:#fffdfc;border-radius:11px;padding:12px;color:var(--ink);min-height:45px}
+.field textarea{resize:vertical;min-height:110px}
+.field select:focus,.field input:focus,.field textarea:focus{border-color:var(--rose-dark)}
+.field-hint{font-size:11px;color:var(--muted)}
+.color-options{display:flex;gap:10px;flex-wrap:wrap}
+.color-chip{width:32px;height:32px;border:3px solid white;outline:1px solid var(--line);border-radius:50%;padding:0}
+.color-chip[aria-pressed="true"]{outline:2px solid var(--rose-dark);outline-offset:2px}
+.result-card{margin-top:18px;display:none}
+.result-card.show{display:block;animation:fadeup .35s ease}
+.result-title{display:flex;justify-content:space-between;gap:12px;align-items:start}
+.result-pill{font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--blush);color:var(--rose-dark);padding:6px 10px;border-radius:99px}
+.result-art{min-height:140px;border-radius:15px;background:linear-gradient(120deg,#f6e6e4,#e6d5df);display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0;padding:20px;flex-wrap:wrap}
+.nail{width:31px;height:65px;border:1px solid #6c4a5544;border-radius:48% 48% 35% 35%;box-shadow:inset -3px -3px 5px #0000000b}
+.result-copy{font-size:13px;color:var(--muted)}
+.result-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.tools-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.tool-card h3{margin-bottom:8px}
+.tool-card>p{font-size:13px;color:var(--muted)}
+.prompt-output{min-height:115px;background:#faf3f2;border:1px dashed #d7b9bf;border-radius:13px;padding:14px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;margin:13px 0}
+.prompt-actions{display:flex;gap:9px;flex-wrap:wrap}
+.routine-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.routine-card{border:1px solid var(--line);border-radius:var(--radius);padding:23px;background:var(--white)}
+.routine-icon{width:43px;height:43px;border-radius:50%;background:var(--blush);display:grid;place-items:center;font-size:20px;margin-bottom:18px}
+.routine-card h3{font-size:23px}
+.routine-card p{font-size:13px;color:var(--muted)}
+.routine-card ul{padding-left:18px;font-size:12px;color:var(--muted)}
+.palette-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.palette{border:1px solid var(--line);border-radius:17px;overflow:hidden;background:var(--white)}
+.swatches{height:110px;display:flex}
+.swatches span{flex:1}
+.palette-info{padding:14px}
+.palette-info h3{font-size:19px;margin-bottom:5px}
+.palette-info p{font-size:11px;color:var(--muted);margin:0 0 10px}
+.palette-info button{border:0;background:none;padding:0;color:var(--rose-dark);font-size:11px;font-weight:700}
+.gallery-section{background:#f4eae7}
+.gallery-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:25px}
+.search-wrap{flex:1;min-width:200px}
+.filter-list{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{border:1px solid #ddc6ca;background:transparent;color:var(--ink);padding:9px 13px;border-radius:99px;font-size:11px}
+.filter-btn[aria-pressed="true"]{background:var(--rose-dark);border-color:var(--rose-dark);color:white}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.gallery-card{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--white);min-width:0}
+.gallery-art{height:215px;position:relative;display:grid;place-items:center;overflow:hidden}
+.gallery-art .art-orb{position:absolute;width:150px;height:150px;border-radius:50%;border:1px solid #ffffffa8}
+.gallery-art .art-letter{font-family:var(--serif);font-size:75px;color:#79465278;position:relative}
+.gallery-art .mini-nails{position:absolute;bottom:24px;display:flex;gap:7px}
+.mini-nails span{width:19px;height:37px;border-radius:50% 50% 35% 35%;border:1px solid #6b455455}
+.gallery-content{padding:18px}
+.gallery-content h3{font-size:22px;margin:0 0 7px}
+.gallery-content p{font-size:12px;color:var(--muted);margin:0 0 14px}
+.gallery-meta{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gallery-meta .tag{font-size:10px;color:var(--rose-dark);text-transform:uppercase;letter-spacing:1px}
+.gallery-actions{display:flex;gap:7px}
+.gallery-actions button{border:1px solid var(--line);background:white;color:var(--rose-dark);border-radius:99px;padding:7px 10px;font-size:10px}
+.gallery-actions button[aria-pressed="true"]{background:var(--blush)}
+.empty-state{padding:40px;text-align:center;border:1px dashed #cdb4bb;border-radius:20px;color:var(--muted);grid-column:1/-1}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step-card{padding:24px 0;border-top:1px solid var(--line)}
+.step-number{font-family:var(--serif);font-size:38px;color:var(--rose);margin-bottom:10px}
+.step-card h3{font-size:23px}
+.step-card p{font-size:13px;color:var(--muted)}
+.faq-list{max-width:850px;margin:auto}
+.faq-list details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq-list summary{cursor:pointer;font-family:var(--serif);font-size:21px;list-style:none;display:flex;justify-content:space-between;gap:15px}
+.faq-list summary:after{content:"+";color:var(--rose-dark);font-family:var(--sans)}
+.faq-list details[open] summary:after{content:"−"}
+.faq-list details p{padding-top:12px;color:var(--muted);font-size:13px;max-width:750px}
+.notice{background:#f4e9df;border-left:3px solid var(--gold);padding:17px 20px;border-radius:0 12px 12px 0;font-size:12px;color:#5d4a46}
+.page-sections{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.legal-card h3{font-size:23px;margin-top:12px}
+.legal-card p,.legal-card li{font-size:13px;color:var(--muted)}
+.legal-card ul{padding-left:19px}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:25px}
+.contact-card p{font-size:13px;color:var(--muted)}
+.contact-card a{overflow-wrap:anywhere}
+.status{font-size:12px;margin-top:12px;min-height:20px;color:var(--rose-dark)}
+footer{background:#3f3038;color:#f9efed;padding:55px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px;padding-bottom:35px}
+.footer-brand .brand{color:#fff}
+.footer-brand .brand-sub{color:#d8c4cc}
+footer h3{font-size:22px;color:white}
+footer p,footer li{font-size:12px;color:#d7c5cc}
+footer a{color:#f4dce2}
+footer ul{list-style:none;padding:0;margin:0}
+footer li{margin:8px 0}
+.footer-bottom{border-top:1px solid #ffffff2b;padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:11px;color:#d7c5cc}
+.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#382b32;color:white;padding:12px 18px;border-radius:99px;font-size:12px;z-index:99;opacity:0;pointer-events:none;transition:.25s;max-width:calc(100% - 30px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.back-top{position:fixed;right:18px;bottom:18px;z-index:10;display:none}
+.back-top.show{display:grid}
+[hidden]{display:none!important}
+@keyframes fadeup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1100px){.hero{padding-top:75px}.hero-art{min-height:530px}}
+@media(max-width:900px){
+ .navlinks{gap:12px}.navlinks a{font-size:10px}
+ .hero-grid{gap:25px}.hero-art{min-height:410px}
+ .generator-grid{grid-template-columns:1fr;gap:25px}.generator-copy{position:static}
+ .gallery-grid{grid-template-columns:repeat(2,1fr)}
+ .palette-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+ .wrap{width:min(100% - 28px,560px)}
+ .nav{min-height:68px}.brand-name{font-size:23px}
+ .menu-btn{display:inline-grid}
+ .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:18px 22px 22px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:0}
+ .navlinks.open{display:flex}
+ .navlinks a{font-size:13px;padding:11px 0;border-bottom:1px solid var(--line)}
+ .navlinks a:last-child{border:0}
+ .nav-actions .saved-nav{display:none}
+ .hero{padding:34px 0 35px}
+ .hero-grid{grid-template-columns:1fr;gap:27px}
+ .hero-copy{padding:0}.hero h1{font-size:58px}
+ .hero-art{min-height:340px;width:100%;max-width:440px;margin:auto}
+ .trust-grid{grid-template-columns:1fr;gap:8px}
+ section{padding:58px 0}
+ .section-head{display:block}.section-head p{margin-top:10px}
+ .category-grid{grid-template-columns:1fr 1fr;gap:11px}
+ .category-card{min-height:185px;padding:17px}
+ .category-card h3{font-size:21px;max-width:130px}
+ .category-card p{font-size:11px;max-width:140px}
+ .cat-art{width:82px;height:82px;font-size:34px;right:8px;top:12px}
+ .cat-number{top:13px;left:15px;font-size:9px}
+ .category-card .arrow{right:14px;bottom:14px}
+ .generator-form,.result-card,.tool-card,.legal-card,.contact-card{padding:19px}
+ .field-grid{grid-template-columns:1fr;gap:0}
+ .tools-grid,.routine-grid,.steps-grid,.page-sections,.contact-grid{grid-template-columns:1fr}
+ .gallery-grid{grid-template-columns:1fr 1fr;gap:11px}
+ .gallery-art{height:155px}
+ .gallery-content{padding:12px}
+ .gallery-content h3{font-size:18px}
+ .gallery-content p{font-size:11px}
+ .gallery-meta{align-items:start;flex-direction:column}
+ .gallery-actions{flex-wrap:wrap}
+ .gallery-actions button{padding:7px 9px}
+ .palette-grid{gap:10px}
+ .swatches{height:78px}
+ .palette-info{padding:10px}
+ .palette-info h3{font-size:16px}
+ .filter-list{gap:6px}
+ .filter-btn{padding:8px 10px;font-size:10px}
+ .gallery-tools{align-items:stretch}
+ .search-wrap{flex-basis:100%}
+ .footer-grid{grid-template-columns:1fr;gap:22px}
+ .footer-bottom{display:block}.footer-bottom span{display:block;margin-top:8px}
+}
+@media(max-width:360px){
+ .brand-name{font-size:20px;letter-spacing:3px}
+ .category-grid,.gallery-grid{grid-template-columns:1fr}
+ .category-card{min-height:175px}
+ .hero h1{font-size:48px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home" aria-label="ROSEÉ home">
+   <span class="brand-mark" aria-hidden="true">R</span>
+   <span><span class="brand-name">ROSEÉ</span><span class="brand-sub" style="display:block">The Beauty Atelier</span></span>
+  </a>
+  <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+   <a href="#categories">Explore</a><a href="#generator">Nail Studio</a><a href="#prompts">Prompt Lab</a>
+   <a href="#gallery">Gallery</a><a href="#routines">Rituals</a><a href="#help">Help</a><a href="#contact">Contact</a>
+  </nav>
+  <div class="nav-actions">
+   <a class="btn secondary saved-nav" href="#gallery" title="Browse and save favorite looks">♡ Saved looks</a>
+   <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+  </div>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div class="hero-copy">
+   <div class="eyebrow">Your daily dose of beauty</div>
+   <h1>Beauty, with a <em>softer touch.</em></h1>
+   <p class="hero-intro">Welcome to ROSEÉ, your personal beauty atelier for considered nail art, wearable makeup, graceful hairstyles and modern bridal inspiration. Explore curated ideas, create a nail-design concept, discover harmonious color palettes and copy ready-to-use prompts for your favorite image tools — all free, right in your browser.</p>
+   <div class="hero-buttons"><a class="btn primary" href="#categories">Explore the atelier ↗</a><a class="btn secondary" href="#generator">Create a nail idea</a></div>
+   <div class="hero-note"><span class="note-line"></span><span>Thoughtful inspiration. Your own signature style.</span></div>
+  </div>
+  <div class="hero-art" role="img" aria-label="Abstract rose-toned editorial artwork inspired by petals and soft beauty textures">
+   <div class="hero-orbit"></div><div class="hero-oval"></div><div class="hero-petal"></div><div class="hero-petal p2"></div><div class="hero-petal p3"></div>
+   <div class="hero-sticker">A little<br>more lovely</div>
+  </div>
+ </div>
+</section>
+
+<div class="trust-strip"><div class="wrap trust-grid">
+ <div><strong>01</strong> &nbsp; Free beauty tools</div><div><strong>02</strong> &nbsp; No account required</div><div><strong>03</strong> &nbsp; Inspiration, not prescriptions</div>
+</div></div>
+
+<section id="categories">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Find your mood</div><h2>Explore the beauty edit</h2></div><p>From everyday minimalism to celebration-ready details, start with the category that speaks to you. Each selection takes you to related inspiration below.</p></div>
+  <div class="category-grid">
+   <a class="category-card" href="#gallery" data-category-link="Nail Art"><span class="cat-number">01 / DETAIL</span><span class="cat-art" aria-hidden="true">✳</span><h3>Nail Art</h3><p>Shapes, finishes & little details</p><span class="arrow">↗</span></a>
+   <a class="category-card" href="#routines"><span class="cat-number">02 / CARE</span><span class="cat-art" aria-hidden="true">♡</span><h3>Manicure</h3><p>Simple, thoughtful nail rituals</p><span class="arrow">↗</span></a>
+   <a class="category-card" href="#gallery" data-category-link="Makeup Looks"><span class="cat-number">03 / COLOR</span><span class="cat-art" aria-hidden="true">◒</span><h3>Makeup Looks</h3><p>Soft glam to statement lips</p><span class="arrow">↗</span></a>
+   <a class="category-card" href="#gallery" data-category-link="Hairstyles"><span class="cat-number">04 / FORM</span><span class="cat-art" aria-hidden="true">〰</span><h3>Hairstyles</h3><p>Elegant updos & easy waves</p><span class="arrow">↗</span></a>
+   <a class="category-card" href="#gallery" data-category-link="Bridal Beauty"><span class="cat-number">05 / MOMENT</span><span class="cat-art" aria-hidden="true">✧</span><h3>Bridal Beauty</h3><p>Romantic details for your day</p><span class="arrow">↗</span></a>
+   <a class="category-card" href="#gallery" data-category-link="Seasonal Beauty"><span class="cat-number">06 / SEASON</span><span class="cat-art" aria-hidden="true">❋</span><h3>Seasonal Beauty</h3><p>Fresh colors for every season</p><span class="arrow">↗</span></a>
+  </div>
+ </div>
+</section>
+
+<section class="generator-section" id="generator">
+ <div class="wrap generator-grid">
+  <div class="generator-copy"><div class="eyebrow">The signature tool</div><h2>Your nail idea, thoughtfully styled.</h2>
+   <p>Choose your nail shape, length, color and occasion. ROSEÉ will assemble a personalized design concept with a matching finish, details and a prompt you can copy into an external image generator or share with your nail artist.</p>
+   <p class="small">This is a rule-based idea generator, not an AI image generator. It works without an account, API or server.</p>
+   <div class="notice">Beauty note: design suggestions are for inspiration only. Choose products suitable for you and consult a qualified professional if you have concerns about nail or skin health.</div>
+  </div>
+  <div>
+   <form class="generator-form" id="nailForm">
+    <div class="field-grid">
+     <div class="field"><label for="shape">Nail shape</label><select id="shape" required><option value="Almond">Almond</option><option value="Oval">Oval</option><option value="Square">Square</option><option value="Squoval">Squoval</option><option value="Coffin">Coffin / Ballerina</option><option value="Stiletto">Stiletto</option><option value="Round">Round</option></select></div>
+     <div class="field"><label for="length">Nail length</label><select id="length" required><option value="Short">Short</option><option value="Medium" selected>Medium</option><option value="Long">Long</option></select></div>
+     <div class="field"><label for="color">Color story</label><select id="color" required><option value="Dusty rose">Dusty rose</option><option value="Pearl white">Pearl white</option><option value="Soft mauve">Soft mauve</option><option value="Classic red">Classic red</option><option value="Chocolate brown">Chocolate brown</option><option value="Sage green">Sage green</option><option value="Midnight blue">Midnight blue</option><option value="Champagne nude">Champagne nude</option><option value="Black">Black</option><option value="Pastel mix">Pastel mix</option></select></div>
+     <div class="field"><label for="occasion">Occasion</label><select id="occasion" required><option value="Everyday">Everyday</option><option value="Office">Office</option><option value="Wedding guest">Wedding guest</option><option value="Bridal">Bridal</option><option value="Party">Party</option><option value="Holiday">Holiday</option><option value="Date night">Date night</option></select></div>
+     <div class="field"><label for="finish">Finish</label><select id="finish"><option value="Glossy">Glossy</option><option value="Velvet matte">Velvet matte</option><option value="Pearlescent">Pearlescent</option><option value="Chrome">Chrome</option><option value="Sheer jelly">Sheer jelly</option></select></div>
+     <div class="field"><label for="detail">Design detail</label><select id="detail"><option value="Minimal gold accents">Minimal gold accents</option><option value="Micro French tips">Micro French tips</option><option value="Floral line art">Floral line art</option><option value="Tiny pearl details">Tiny pearl details</option><option value="Abstract swirls">Abstract swirls</option><option value="Glazed effect">Glazed effect</option><option value="Negative space">Negative space</option><option value="Fine glitter accents">Fine glitter accents</option></select></div>
+    </div>
+    <button class="btn primary" type="submit">Create my design idea ✧</button>
+    <p class="field-hint" style="margin:12px 0 0">Tip: choose a color and occasion first, then refine the shape and finish.</p>
+   </form>
+   <div class="result-card" id="nailResult" aria-live="polite">
+    <div class="result-title"><div><div class="eyebrow">Your custom concept</div><h3 id="resultName">The Rose Edit</h3></div><span class="result-pill">Made for you</span></div>
+    <div class="result-art" id="nailPreview" aria-label="Decorative nail color preview"></div>
+    <p id="resultDescription"></p><p class="result-copy" id="resultPrompt"></p>
+    <div class="result-actions"><button class="btn primary" id="copyNailPrompt" type="button">Copy image prompt</button><button class="btn secondary" id="copyNailIdea" type="button">Copy full idea</button></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="prompts">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Words into visuals</div><h2>The beauty prompt lab</h2></div><p>Build a descriptive prompt for a beauty image. Copy it into an image-generation service of your choice. This tool creates text only; it does not create or fetch images.</p></div>
+  <div class="tools-grid">
+   <div class="tool-card"><h3>Nail-art image prompt</h3><p>Generate a detailed prompt based on your preferred aesthetic.</p>
+    <div class="field"><label for="promptStyle">Visual style</label><select id="promptStyle"><option value="luxury editorial photography">Luxury editorial</option><option value="clean minimalist studio photography">Clean minimal</option><option value="romantic bridal editorial photography">Romantic bridal</option><option value="playful colorful beauty campaign">Playful color</option><option value="macro product photography">Macro detail</option></select></div>
+    <div class="field"><label for="promptSubject">Subject and details</label><input id="promptSubject" maxlength="180" value="almond nails, dusty rose polish, delicate gold line art" placeholder="e.g. pearl chrome French tips"></div>
+    <div class="field"><label for="promptBackground">Background</label><select id="promptBackground"><option>soft pearl-white backdrop</option><option>dusty rose satin</option><option>natural stone surface</option><option>champagne silk fabric</option><option>minimal warm beige studio</option></select></div>
+    <button class="btn primary" id="makeNailPrompt" type="button">Build nail prompt</button>
+    <div class="prompt-output" id="nailPromptOutput" aria-live="polite">Your finished prompt will appear here.</div><div class="prompt-actions"><button class="btn secondary" id="copyNailLab" type="button">Copy prompt</button></div>
+   </div>
+   <div class="tool-card"><h3>Beauty editorial prompt</h3><p>Describe a makeup, hairstyle or bridal beauty concept with editorial direction.</p>
+    <div class="field"><label for="beautyCategory">Beauty category</label><select id="beautyCategory"><option>soft glam makeup</option><option>romantic bridal makeup</option><option>effortless wavy hairstyle</option><option>elegant low bun</option><option>dewy everyday makeup</option><option>seasonal beauty editorial</option></select></div>
+    <div class="field"><label for="beautyPalette">Color palette</label><select id="beautyPalette"><option>rose, mauve and champagne</option><option>pearl, ivory and soft gold</option><option>terracotta, peach and warm brown</option><option>berry, plum and soft taupe</option><option>sage, cream and muted pink</option></select></div>
+    <div class="field"><label for="beautyMood">Mood and setting</label><input id="beautyMood" maxlength="160" value="soft natural light, refined and timeless" placeholder="e.g. evening light, modern romance"></div>
+    <button class="btn primary" id="makeBeautyPrompt" type="button">Build beauty prompt</button>
+    <div class="prompt-output" id="beautyPromptOutput" aria-live="polite">Your finished prompt will appear here.</div><div class="prompt-actions"><button class="btn secondary" id="copyBeautyLab" type="button">Copy prompt</button></div>
+   </div>
+  </div>
+  <p class="small muted" style="margin-top:16px">Tip: specify composition, lighting, color, finish and mood. External image services have their own terms and privacy policies; review them before sharing personal information.</p>
+ </div>
+</section>
+
+<section id="routines">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Little rituals, lovely results</div><h2>Beauty routine notes</h2></div><p>Simple, adaptable ideas to help you organize a beauty routine. These are general informational suggestions, not medical advice or a guarantee of results.</p></div>
+  <div class="routine-grid">
+   <article class="routine-card"><div class="routine-icon" aria-hidden="true">♡</div><h3>The manicure reset</h3><p>A neat, low-fuss routine for an at-home manicure day.</p><ul><li>Remove old polish gently, following product directions.</li><li>Shape nails in one consistent direction where practical.</li><li>Apply cuticle oil to the surrounding skin if suitable.</li><li>Use a base coat and follow polish drying instructions.</li></ul></article>
+   <article class="routine-card"><div class="routine-icon" aria-hidden="true">✧</div><h3>The soft-glam edit</h3><p>A balanced makeup sequence for a polished everyday look.</p><ul><li>Start with clean skin and products that suit your needs.</li><li>Blend a light base only where desired.</li><li>Add softly defined eyes and a blush tone you enjoy.</li><li>Finish with a comfortable lip color.</li></ul></article>
+   <article class="routine-card"><div class="routine-icon" aria-hidden="true">❀</div><h3>The occasion-ready plan</h3><p>Prepare your look without leaving every detail to the last minute.</p><ul><li>Choose your outfit and beauty palette in advance.</li><li>Test your chosen look before the event.</li><li>Prepare tools and products you already tolerate well.</li><li>Keep a small touch-up kit for your own preferences.</li></ul></article>
+  </div>
+ </div>
+</section>
+
+<section id="palettes" style="background:#f8f0ed">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Color stories</div><h2>Find your palette</h2></div><p>Explore ready-made combinations for nails, makeup, accessories or mood boards. Select a palette to copy its color names and hex values.</p></div>
+  <div class="palette-grid">
+   <article class="palette"><div class="swatches"><span style="background:#bd7f8b"></span><span style="background:#ead4d8"></span><span style="background:#794652"></span><span style="background:#c2a47a"></span></div><div class="palette-info"><h3>Rose Atelier</h3><p>Dusty rose · petal · berry · champagne</p><button type="button" data-palette="Rose Atelier|#BD7F8B, #EAD4D8, #794652, #C2A47A">Copy palette ↗</button></div></article>
+   <article class="palette"><div class="swatches"><span style="background:#fffaf0"></span><span style="background:#ded0b9"></span><span style="background:#aa957c"></span><span style="background:#6c5c55"></span></div><div class="palette-info"><h3>Pearl & Sand</h3><p>Ivory · oat · taupe · cocoa</p><button type="button" data-palette="Pearl & Sand|#FFFAF0, #DED0B9, #AA957C, #6C5C55">Copy palette ↗</button></div></article>
+   <article class="palette"><div class="swatches"><span style="background:#a9b8a0"></span><span style="background:#e7e0d1"></span><span style="background:#c38f82"></span><span style="background:#776d5c"></span></div><div class="palette-info"><h3>Garden Muse</h3><p>Sage · linen · terracotta · olive</p><button type="button" data-palette="Garden Muse|#A9B8A0, #E7E0D1, #C38F82, #776D5C">Copy palette ↗</button></div></article>
+   <article class="palette"><div class="swatches"><span style="background:#80627f"></span><span style="background:#c7a5b8"></span><span style="background:#e8dbe0"></span><span style="background:#41364c"></span></div><div class="palette-info"><h3>Mauve Hour</h3><p>Plum · lilac rose · mist · ink</p><button type="button" data-palette="Mauve Hour|#80627F, #C7A5B8, #E8DBE0, #41364C">Copy palette ↗</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="gallery-section" id="gallery">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">The inspiration library</div><h2>Looks to keep close</h2></div><p>Search and filter original, CSS-created editorial cards. Save favorites on this device, copy a concept, or open Pinterest to share it. Artwork is decorative rather than a photograph of a real finished look.</p></div>
+  <div class="gallery-tools">
+   <div class="search-wrap"><label class="small" for="gallerySearch">Search the gallery</label><input class="search-input" id="gallerySearch" type="search" placeholder="Try “rose”, “bridal”, “glossy”…" aria-label="Search gallery ideas"></div>
+   <button class="btn secondary" id="showFavorites" type="button" aria-pressed="false">♡ Favorites only</button>
+  </div>
+  <div class="filter-list" id="filterList" role="group" aria-label="Filter gallery by category" style="margin-bottom:22px">
+   <button class="filter-btn" type="button" data-filter="All" aria-pressed="true">All looks</button>
+   <button class="filter-btn" type="button" data-filter="Nail Art" aria-pressed="false">Nail Art</button>
+   <button class="filter-btn" type="button" data-filter="Makeup Looks" aria-pressed="false">Makeup</button>
+   <button class="filter-btn" type="button" data-filter="Hairstyles" aria-pressed="false">Hairstyles</button>
+   <button class="filter-btn" type="button" data-filter="Bridal Beauty" aria-pressed="false">Bridal</button>
+   <button class="filter-btn" type="button" data-filter="Seasonal Beauty" aria-pressed="false">Seasonal</button>
+  </div>
+  <div class="gallery-grid" id="galleryGrid">
+   <article class="gallery-card" data-category="Nail Art" data-title="Rosewater French" data-description="Sheer rose base, pearl-white micro French tips and a high-gloss finish.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#f6e7e5,#d7b5c1)"><span class="art-orb"></span><span class="art-letter">R</span><div class="mini-nails"><span style="background:#eacbd0"></span><span style="background:#f9eee8"></span><span style="background:#d8aab5"></span><span style="background:#f9eee8"></span><span style="background:#eacbd0"></span></div></div>
+    <div class="gallery-content"><span class="tag">Nail Art</span><h3>Rosewater French</h3><p>Sheer rose, pearl-white micro tips and a glossy finish.</p><div class="gallery-meta"><span class="small muted">Soft · Timeless</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Rosewater French">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Nail Art" data-title="Midnight Velvet" data-description="Short rounded midnight-blue nails with a velvet matte finish and minimal silver accents.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#dce0e8,#a8a7bd)"><span class="art-orb"></span><span class="art-letter">M</span><div class="mini-nails"><span style="background:#28364d"></span><span style="background:#36465f"></span><span style="background:#28364d"></span><span style="background:#59647a"></span><span style="background:#28364d"></span></div></div>
+    <div class="gallery-content"><span class="tag">Nail Art</span><h3>Midnight Velvet</h3><p>Inky blue, velvet matte and tiny silver accents.</p><div class="gallery-meta"><span class="small muted">Modern · Bold</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Midnight Velvet">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Makeup Looks" data-title="Petal Soft Glam" data-description="Rose-toned blush, softly defined eyes, luminous skin and a muted pink lip.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#f7e5dc,#d9b0ad)"><span class="art-orb"></span><span class="art-letter">P</span></div>
+    <div class="gallery-content"><span class="tag">Makeup Looks</span><h3>Petal Soft Glam</h3><p>Rose blush, softly defined eyes and a muted pink lip.</p><div class="gallery-meta"><span class="small muted">Romantic · Fresh</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Petal Soft Glam">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Hairstyles" data-title="The Modern Low Bun" data-description="A sleek, softly sculpted low bun with a clean part and a few gentle face-framing pieces.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#e9d9ca,#b89b8c)"><span class="art-orb"></span><span class="art-letter">B</span></div>
+    <div class="gallery-content"><span class="tag">Hairstyles</span><h3>The Modern Low Bun</h3><p>A sleek low bun with soft, face-framing pieces.</p><div class="gallery-meta"><span class="small muted">Polished · Easy</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save The Modern Low Bun">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Bridal Beauty" data-title="Pearl Bride" data-description="Pearl-white nails, a sheer ivory base, subtle champagne shimmer and romantic bridal styling.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#fffaf1,#e8d5d9)"><span class="art-orb"></span><span class="art-letter">♡</span><div class="mini-nails"><span style="background:#fffaf1"></span><span style="background:#eadfcf"></span><span style="background:#fffaf1"></span><span style="background:#eadfcf"></span><span style="background:#fffaf1"></span></div></div>
+    <div class="gallery-content"><span class="tag">Bridal Beauty</span><h3>Pearl Bride</h3><p>Ivory, delicate shimmer and understated celebration details.</p><div class="gallery-meta"><span class="small muted">Elegant · Bridal</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Pearl Bride">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Seasonal Beauty" data-title="Sage Garden" data-description="Muted sage green, warm cream and a botanical-inspired accent for a fresh seasonal palette.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#e3e8dc,#a8b5a1)"><span class="art-orb"></span><span class="art-letter">S</span><div class="mini-nails"><span style="background:#a9b8a0"></span><span style="background:#e8e3d7"></span><span style="background:#8e9f86"></span><span style="background:#e8e3d7"></span><span style="background:#a9b8a0"></span></div></div>
+    <div class="gallery-content"><span class="tag">Seasonal Beauty</span><h3>Sage Garden</h3><p>Muted sage, warm cream and a botanical accent.</p><div class="gallery-meta"><span class="small muted">Calm · Natural</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Sage Garden">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Nail Art" data-title="Champagne Glaze" data-description="Short oval champagne-nude nails with pearlescent glaze and a soft reflective sheen.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#f6eddf,#d9c6a8)"><span class="art-orb"></span><span class="art-letter">C</span><div class="mini-nails"><span style="background:#ddc7a9"></span><span style="background:#f4e7cf"></span><span style="background:#d5bd9a"></span><span style="background:#f4e7cf"></span><span style="background:#ddc7a9"></span></div></div>
+    <div class="gallery-content"><span class="tag">Nail Art</span><h3>Champagne Glaze</h3><p>Nude tones with a pearlescent, light-catching finish.</p><div class="gallery-meta"><span class="small muted">Minimal · Luminous</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Champagne Glaze">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Makeup Looks" data-title="Berry Evening" data-description="Muted berry lips, soft mauve eyes and balanced complexion makeup for an evening look.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#e9dce4,#b99aaf)"><span class="art-orb"></span><span class="art-letter">E</span></div>
+    <div class="gallery-content"><span class="tag">Makeup Looks</span><h3>Berry Evening</h3><p>Muted berry lips and soft mauve eyes for evening.</p><div class="gallery-meta"><span class="small muted">Rich · Refined</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Berry Evening">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+   <article class="gallery-card" data-category="Bridal Beauty" data-title="Rose Gold Vows" data-description="Soft rose-gold accents, blush tones and romantic details for a wedding-ready mood board.">
+    <div class="gallery-art" style="background:linear-gradient(140deg,#f4e4df,#d4b3ad)"><span class="art-orb"></span><span class="art-letter">V</span></div>
+    <div class="gallery-content"><span class="tag">Bridal Beauty</span><h3>Rose Gold Vows</h3><p>Blush tones and subtle rose-gold details.</p><div class="gallery-meta"><span class="small muted">Warm · Romantic</span><div class="gallery-actions"><button type="button" class="favorite-btn" aria-pressed="false" title="Save Rose Gold Vows">♡ Save</button><button type="button" class="copy-card">Copy</button><button type="button" class="share-card">Pinterest ↗</button></div></div></div>
+   </article>
+  </div>
+  <p class="empty-state" id="galleryEmpty" hidden>No looks match your search. Try another keyword, choose a different category, or turn off Favorites only.</p>
+  <p class="small muted" style="margin-top:20px">Favorites are saved only in this browser when local storage is available. Clearing browser data may remove them. CSS artwork is original decorative illustration, not a photo of an actual beauty result.</p>
+ </div>
+</section>
+
+<section id="how">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">A simple starting point</div><h2>Your first five minutes</h2></div><p>You do not need an account or design experience. Follow these steps to turn a mood into a practical beauty concept.</p></div>
+  <div class="steps-grid">
+   <article class="step-card"><div class="step-number">01</div><h3>Choose a direction</h3><p>Browse the six categories. Example: select Bridal Beauty for a wedding look, or Nail Art for a manicure concept.</p></article>
+   <article class="step-card"><div class="step-number">02</div><h3>Personalize your idea</h3><p>In Nail Studio, select almond shape, medium length, dusty rose and wedding guest. Choose a glossy finish and micro details.</p></article>
+   <article class="step-card"><div class="step-number">03</div><h3>Keep or share it</h3><p>Copy your concept or image prompt, save a gallery favorite, or use the Pinterest share option to continue outside ROSEÉ.</p></article>
+  </div>
+  <div class="notice" style="margin-top:28px"><strong>Example output:</strong> “Medium almond nails in dusty rose with glossy finish and delicate micro French tips, styled for a wedding guest look. Balanced composition, clean cuticles, soft studio lighting and a refined editorial mood.” Use it as a starting point and adjust it to your taste.</div>
+ </div>
+</section>
+
+<section id="help" style="background:#f8f0ed">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Here to make it easy</div><h2>Help & frequently asked questions</h2></div><p>Clear answers about the tools, saved ideas, sharing and what this standalone website can and cannot do.</p></div>
+  <div class="faq-list">
+   <details><summary>Is ROSEÉ completely free to use?</summary><p>Yes. The HTML, CSS and JavaScript features on this page are designed to work without a paid API, account, subscription or backend. Your internet browser is all you need to use the local tools.</p></details>
+   <details><summary>Does the nail generator create a real AI image?</summary><p>No. It creates a written design concept and a descriptive prompt using your choices. To turn that prompt into an image, you would need to use a separate image-generation service. That service may have its own account requirements, costs and data policies.</p></details>
+   <details><summary>How do I save a favorite look?</summary><p>Select the Save button on a gallery card. It will be stored in this browser if local storage is available. Use Favorites only to view saved cards. Saving is local to this device and is not an online account or cloud backup.</p></details>
+   <details><summary>How does Pinterest sharing work?</summary><p>The Pinterest button opens Pinterest's pin-creation page with the look's text description where supported. A local file is not automatically uploaded, and this website does not host a public image URL for the CSS artwork. If Pinterest requires an image or source URL, add one there yourself or use the Copy button to prepare your description.</p></details>
+   <details><summary>Why are the gallery visuals illustrations instead of photographs?</summary><p>The gallery uses lightweight CSS-created abstract artwork, so it does not depend on remote image hosts or third-party image downloads. These cards communicate color and mood rather than depicting real people or actual nail results.</p></details>
+   <details><summary>Does the contact form send a message to the owner?</summary><p>This static site has no email server. The contact form validates your message and opens your default email application with a prepared draft. You must send the email from that application. If no email app is configured, use the direct email link in the Contact section.</p></details>
+   <details><summary>Can I use the beauty suggestions as medical advice?</summary><p>No. All suggestions are informational and aesthetic. They do not diagnose, treat or prevent medical conditions. Follow product instructions and seek qualified advice for persistent nail, skin or scalp concerns, irritation or allergic reactions.</p></details>
+   <details><summary>Will my favorites transfer to another phone?</summary><p>Not automatically. Favorites are stored locally in the browser. They may disappear if you clear site data, use private browsing or switch devices.</p></details>
+   <details><summary>Can I publish this website online?</summary><p>Yes. Save this file as index.html and deploy it to a static hosting provider. Replace the example canonical and Open Graph URLs with your real public website URL before publishing. A static site does not provide server-side form processing.</p></details>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="wrap page-sections">
+  <article class="legal-card"><div class="eyebrow">Our point of view</div><h2>About ROSEÉ</h2>
+   <p>ROSEÉ — The Beauty Atelier is an independent beauty-inspiration concept created to make personal style feel approachable, creative and considered. It brings nail design ideas, manicure rituals, makeup palettes, hairstyle inspiration, bridal details and seasonal looks together in one simple place.</p>
+   <p>Our free interactive tools help visitors explore combinations, develop written concepts and prepare prompts for creative projects. The website is designed for discovery rather than professional diagnosis or personalized medical guidance.</p>
+   <p>ROSEÉ is an original concept brand for this website and is not affiliated with a salon, cosmetics manufacturer or external image-generation service.</p>
+  </article>
+  <article class="legal-card"><div class="eyebrow">Our approach</div><h2>Beauty on your terms.</h2>
+   <p>Beauty is personal. Use the ideas as inspiration, adapt them to your preferences and budget, and choose products and services that suit your own circumstances. No particular appearance, product or routine is required.</p>
+   <p>We aim to keep the experience lightweight, accessible and transparent. This version uses local browser code and original CSS artwork instead of remote image libraries or tracking scripts.</p>
+   <p>Owner: <strong>Chief</strong><br>Email: <a href="mailto:chief0000019@gmail.com">chief0000019@gmail.com</a></p>
+  </article>
+ </div>
+</section>
+
+<section id="contact" style="background:#f1e7e5">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Say hello</div><h2>Contact the atelier</h2></div><p>Have a question, a suggestion or feedback about the site? Prepare an email using the form or contact the owner directly.</p></div>
+  <div class="contact-grid">
+   <div class="contact-card"><div class="eyebrow">Creator / Owner</div><h3>Chief</h3><p>For website feedback and general enquiries, contact:</p><p><a href="mailto:chief0000019@gmail.com">chief0000019@gmail.com</a></p><p class="small">No phone number or business address is published. This is a static website and has no server-side inbox.</p></div>
+   <form class="contact-card" id="contactForm">
+    <div class="field"><label for="contactName">Your name (optional)</label><input id="contactName" name="name" maxlength="80" autocomplete="name" placeholder="How should we address you?"></div>
+    <div class="field"><label for="contactEmail">Your email (optional)</label><input id="contactEmail" name="email" type="email" maxlength="160" autocomplete="email" placeholder="you@example.com"><span class="field-hint">Used only to include it in your email draft.</span></div>
+    <div class="field"><label for="contactTopic">Topic</label><select id="contactTopic" name="topic"><option>General enquiry</option><option>Website feedback</option><option>Accessibility suggestion</option><option>Privacy question</option><option>Copyright enquiry</option></select></div>
+    <div class="field"><label for="contactMessage">Message</label><textarea id="contactMessage" name="message" minlength="5" maxlength="3000" required placeholder="Write your message (5–3000 characters)…"></textarea></div>
+    <button class="btn primary" type="submit">Prepare email ↗</button><p id="contactStatus" class="status" aria-live="polite"></p>
+    <p class="small muted">Your form content is not sent to a server by this page. Submitting opens your email application with a draft; you decide whether to send it.</p>
+   </form>
+  </div>
+ </div>
+</section>
+
+<section id="privacy">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Clear by design</div><h2>Privacy policy</h2></div><p>This policy describes the behavior of this standalone HTML version. If you add analytics, external images, advertising, hosting forms or other integrations, update this policy to reflect those changes.</p></div>
+  <div class="page-sections">
+   <article class="legal-card"><h3>Information you enter</h3><p>The nail generator, prompt builders, gallery filters and palette tools process your choices in your browser. They do not send those choices to a ROSEÉ server because this version has no application backend.</p><p>The contact form opens a mailto draft in your email application. The draft can include the name, email address and message you entered. Nothing is emailed until you send it yourself.</p></article>
+   <article class="legal-card"><h3>Local storage and external links</h3><p>Gallery favorites may be saved in your browser's local storage. You can remove them by unsaving each card or clearing site data in your browser settings. The page does not intentionally install tracking cookies or analytics scripts.</p><p>External links, including Pinterest and your email application, are controlled by their respective providers. When you follow an external link, their policies and processing practices apply.</p></article>
+   <article class="legal-card"><h3>Data minimization</h3><p>Do not enter sensitive personal information into prompts or messages. A hosting provider may process technical request information when you visit a deployed website according to its own terms. This frontend cannot control or guarantee how a host or third-party service handles data.</p></article>
+   <article class="legal-card"><h3>Your choices and policy updates</h3><p>You can use the core design tools without entering your name or email. You can choose not to use external sharing services. This policy may need updating if the website's features, hosting setup or applicable requirements change. This information is general and is not a legal compliance certification.</p><p><strong>Policy reviewed:</strong> October 10, 2026.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="terms" style="background:#f8f0ed">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Using this website</div><h2>Terms of use</h2></div><p>These general terms explain the intended use of this inspiration website. They are not a substitute for legal advice tailored to a particular jurisdiction.</p></div>
+  <div class="page-sections">
+   <article class="legal-card"><h3>Permitted use</h3><p>You may browse the site, use its interactive tools and copy generated text for personal inspiration. You are responsible for how you use, adapt or share copied text and any external images or designs.</p></article>
+   <article class="legal-card"><h3>No professional guarantee</h3><p>Ideas, routines and prompts are offered for general creative and informational purposes. They are not a promise of a particular appearance, result, product suitability or professional service. Check the instructions and terms of any third-party tool you use.</p></article>
+   <article class="legal-card"><h3>Availability and changes</h3><p>The website is provided as a static frontend. Browser settings, storage restrictions, email configuration and third-party changes may affect some functions. We make no claim of uninterrupted availability or error-free operation in every environment.</p></article>
+   <article class="legal-card"><h3>External services and responsibility</h3><p>External sites are not controlled by ROSEÉ. Use them at your discretion and review their policies. Nothing in this page creates a professional-client relationship. Any rights that cannot lawfully be excluded remain unaffected by these general statements.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="disclaimer">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">A thoughtful reminder</div><h2>Disclaimer</h2></div><p>Please read these limitations before relying on any suggestion or using a third-party creative tool.</p></div>
+  <div class="legal-card">
+   <h3>Informational, not medical advice</h3>
+   <p>All beauty routines, manicure suggestions, color recommendations and styling ideas on ROSEÉ are general information for creative inspiration only. They are not medical advice, diagnosis or treatment. Products may not suit everyone. Follow label instructions and patch-test products where the manufacturer recommends it. Stop using a product if it causes an unwanted reaction and seek appropriate professional advice when needed.</p>
+   <h3>Generated text and third-party AI tools</h3>
+   <p>Prompt text is assembled from your selections and is not the result of a real AI model running on this page. An external AI tool may interpret prompts differently, produce inaccurate results or apply its own content and usage restrictions. ROSEÉ does not guarantee an output.</p>
+   <h3>Design concepts and external links</h3>
+   <p>CSS artwork and written examples illustrate concepts and are not photographs or endorsements of particular products. Third-party names and services remain the property of their respective owners. Links are provided for convenience, not as a guarantee of their content, availability, privacy or safety.</p>
+  </div>
+ </div>
+</section>
+
+<section id="copyright" style="background:#f8f0ed">
+ <div class="wrap">
+  <div class="section-head"><div><div class="eyebrow">Ownership & reuse</div><h2>Copyright notice</h2></div><p>A clear statement about this website's original presentation and how to handle material from external services.</p></div>
+  <div class="legal-card">
+   <p><strong>© 2026 ROSEÉ — The Beauty Atelier. All rights reserved.</strong></p>
+   <p>The ROSEÉ name, this page's original written content, layout, CSS styling and custom CSS-generated artwork are presented as an original website concept. Do not imply that you own material you did not create or have permission to use.</p>
+   <p>Visitors may copy the text produced by the tools for personal inspiration and their own creative workflows. This notice does not claim ownership of third-party trademarks, external services, or material supplied by visitors. Rights and permissions for any external material are determined by its actual owner and applicable terms.</p>
+   <p>For copyright questions, contact <a href="mailto:chief0000019@gmail.com">chief0000019@gmail.com</a>. Please provide enough information for the owner to understand your enquiry. This notice is informational and does not establish a legal determination of ownership in every jurisdiction.</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <div class="footer-grid">
+   <div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">R</span><span><span class="brand-name">ROSEÉ</span><span class="brand-sub" style="display:block">The Beauty Atelier</span></span></a><p style="max-width:340px;margin-top:20px">A softer space for beauty inspiration, thoughtful color stories and your next signature look.</p><p class="small">Creator / Owner: <strong>Chief</strong><br><a href="mailto:chief0000019@gmail.com">chief0000019@gmail.com</a></p></div>
+   <div><h3>Explore</h3><ul><li><a href="#categories">Beauty categories</a></li><li><a href="#generator">Nail idea generator</a></li><li><a href="#prompts">Prompt lab</a></li><li><a href="#palettes">Color palettes</a></li><li><a href="#gallery">Inspiration gallery</a></li><li><a href="#routines">Beauty routines</a></li></ul></div>
+   <div><h3>Information</h3><ul><li><a href="#about">About Us</a></li><li><a href="#contact">Contact Us</a></li><li><a href="#privacy">Privacy Policy</a></li><li><a href="#terms">Terms of Use</a></li><li><a href="#disclaimer">Disclaimer</a></li><li><a href="#help">Help / FAQ</a></li><li><a href="#copyright">Copyright Notice</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 ROSEÉ — The Beauty Atelier.</span><span>Made for creative exploration. Beauty suggestions are informational, not medical advice.</span><a href="#home">Back to top ↑</a></div>
+ </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="icon-btn back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+
+<script>
+"use strict";
+(function(){
+ const $=(selector,root=document)=>root.querySelector(selector);
+ const $$=(selector,root=document)=>Array.from(root.querySelectorAll(selector));
+ const toastEl=$("#toast");
+ let toastTimer;
+ function toast(message){
+  toastEl.textContent=message;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toastEl.classList.remove("show"),2600);
+ }
+ async function copyText(text){
+  if(!text || !text.trim()){toast("There is nothing to copy yet.");return false;}
+  try{
+   if(navigator.clipboard && window.isSecureContext){
+    await navigator.clipboard.writeText(text);
+   }else{
+    const area=document.createElement("textarea");
+    area.value=text;area.setAttribute("readonly","");
+    area.style.position="fixed";area.style.opacity="0";
+    document.body.appendChild(area);area.select();
+    const ok=document.execCommand("copy");area.remove();
+    if(!ok)throw new Error("Copy command unavailable");
+   }
+   toast("Copied to clipboard.");return true;
+  }catch(error){
+   toast("Copy was blocked. Please select and copy the text manually.");return false;
+  }
+ }
+ function safeStorageGet(key){
+  try{return localStorage.getItem(key)}catch(error){return null}
+ }
+ function safeStorageSet(key,value){
+  try{localStorage.setItem(key,value);return true}catch(error){return false}
+ }
+ function safeStorageRemove(key){
+  try{localStorage.removeItem(key)}catch(error){}
+ }
+ const colors={
+  "Dusty rose":"#bd7f8b","Pearl white":"#f8f1e8","Soft mauve":"#aa8ca2",
+  "Classic red":"#a52e43","Chocolate brown":"#65463d","Sage green":"#9cab91",
+  "Midnight blue":"#28364d","Champagne nude":"#d8c09d","Black":"#29252a",
+  "Pastel mix":"#d7aebc"
+ };
+ const details={
+  "Minimal gold accents":"delicate gold accents",
+  "Micro French tips":"fine micro French tips",
+  "Floral line art":"minimal floral line art",
+  "Tiny pearl details":"tiny pearl details",
+  "Abstract swirls":"abstract swirls",
+  "Glazed effect":"a glazed reflective effect",
+  "Negative space":"modern negative-space detailing",
+  "Fine glitter accents":"fine, restrained glitter accents"
+ };
+ let currentNailIdea="";
+ let currentNailPrompt="";
+ $("#nailForm").addEventListener("submit",function(event){
+  event.preventDefault();
+  const shape=$("#shape").value,length=$("#length").value,color=$("#color").value;
+  const occasion=$("#occasion").value,finish=$("#finish").value,detail=$("#detail").value;
+  if(!shape||!length||!color||!occasion){toast("Please complete all required selections.");return;}
+  const colorHex=colors[color]||"#bd7f8b";
+  const nameMap={"Dusty rose":"The Rose Edit","Pearl white":"Pearl Light","Soft mauve":"Mauve Muse","Classic red":"Red Letter","Chocolate brown":"Cocoa Gloss","Sage green":"Garden Notes","Midnight blue":"Midnight Velvet","Champagne nude":"Champagne Veil","Black":"Noir Minimal","Pastel mix":"Pastel Reverie"};
+  const name=nameMap[color]||"Your Signature Set";
+  const detailText=details[detail]||detail.toLowerCase();
+  const occasionText=occasion.toLowerCase();
+  currentNailIdea=name+" — "+length.toLowerCase()+" "+shape.toLowerCase()+" nails in "+color.toLowerCase()+", with a "+finish.toLowerCase()+" finish and "+detailText+". Styled for "+occasionText+".";
+  currentNailPrompt="Create a premium beauty editorial image of "+length.toLowerCase()+" "+shape.toLowerCase()+" fingernails in "+color.toLowerCase()+", featuring "+detailText+" and a "+finish.toLowerCase()+" finish. Occasion: "+occasionText+". Elegant hand pose, anatomically natural fingers, clean nail detailing, coordinated color story, soft diffused studio lighting, refined composition, high-end beauty magazine aesthetic, realistic material texture, no text, no watermark.";
+  $("#resultName").textContent=name;
+  $("#resultDescription").textContent=currentNailIdea;
+  $("#resultPrompt").textContent=currentNailPrompt;
+  const preview=$("#nailPreview");preview.replaceChildren();
+  const secondary=color==="Pearl white"?"#e8d9c9":color==="Black"?"#b89a68":colorHex;
+  for(let i=0;i<5;i++){
+   const nail=document.createElement("span");nail.className="nail";
+   nail.style.background=i===2?secondary:colorHex;
+   nail.setAttribute("aria-hidden","true");preview.appendChild(nail);
+  }
+  $("#nailResult").classList.add("show");
+  $("#nailResult").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"nearest"});
+ });
+ $("#copyNailPrompt").addEventListener("click",()=>copyText(currentNailPrompt));
+ $("#copyNailIdea").addEventListener("click",()=>copyText(currentNailIdea+"\n\nImage prompt:\n"+currentNailPrompt));
+
+ $("#makeNailPrompt").addEventListener("click",()=>{
+  const subject=$("#promptSubject").value.trim();
+  if(!subject){toast("Enter a nail-art subject first.");$("#promptSubject").focus();return;}
+  const prompt="Create a "+$("#promptStyle").value+" featuring "+subject+". Background: "+$("#promptBackground").value+". Refined composition, harmonious color grading, delicate detail, soft controlled lighting, polished beauty editorial quality, realistic textures, no text, no watermark.";
+  $("#nailPromptOutput").textContent=prompt;
+ });
+ $("#copyNailLab").addEventListener("click",()=>copyText($("#nailPromptOutput").textContent==="Your finished prompt will appear here."?"":$("#nailPromptOutput").textContent));
+ $("#makeBeautyPrompt").addEventListener("click",()=>{
+  const mood=$("#beautyMood").value.trim();
+  if(!mood){toast("Describe the mood or setting first.");$("#beautyMood").focus();return;}
+  const prompt="Create a premium beauty editorial concept featuring "+$("#beautyCategory").value+". Color palette: "+$("#beautyPalette").value+". Mood and setting: "+mood+". Thoughtful composition, soft directional lighting, refined textures, natural-looking details, sophisticated magazine art direction, inclusive and respectful styling, no text, no watermark.";
+  $("#beautyPromptOutput").textContent=prompt;
+ });
+ $("#copyBeautyLab").addEventListener("click",()=>copyText($("#beautyPromptOutput").textContent==="Your finished prompt will appear here."?"":$("#beautyPromptOutput").textContent));
+
+ $$("[data-palette]").forEach(button=>button.addEventListener("click",()=>{
+  const parts=button.dataset.palette.split("|");
+  copyText(parts[0]+"\n"+parts[1]);
+ }));
+
+ const galleryGrid=$("#galleryGrid");
+ const galleryCards=$$(".gallery-card",galleryGrid);
+ const favoriteKey="rosee-favorites-v1";
+ let favorites=[];
+ try{const stored=JSON.parse(safeStorageGet(favoriteKey)||"[]");if(Array.isArray(stored))favorites=stored.filter(x=>typeof x==="string");}catch(error){favorites=[]}
+ let activeFilter="All",favoritesOnly=false;
+ function updateFavoriteButtons(){
+  galleryCards.forEach(card=>{
+   const title=card.dataset.title;
+   const button=$(".favorite-btn",card);
+   const isSaved=favorites.includes(title);
+   button.setAttribute("aria-pressed",String(isSaved));
+   button.textContent=isSaved?"♥ Saved":"♡ Save";
+   button.title=(isSaved?"Remove ":"Save ")+title+(isSaved?" from favorites":" to favorites");
+  });
+ }
+ function filterGallery(){
+  const query=$("#gallerySearch").value.trim().toLowerCase();
+  let visible=0;
+  galleryCards.forEach(card=>{
+   const matchesCategory=activeFilter==="All"||card.dataset.category===activeFilter;
+   const text=(card.dataset.title+" "+card.dataset.description+" "+card.dataset.category).toLowerCase();
+   const matchesQuery=text.includes(query);
+   const matchesFavorite=!favoritesOnly||favorites.includes(card.dataset.title);
+   const show=matchesCategory&&matchesQuery&&matchesFavorite;
+   card.hidden=!show;if(show)visible++;
+  });
+  $("#galleryEmpty").hidden=visible!==0;
+ }
+ $("#gallerySearch").addEventListener("input",filterGallery);
+ $$(".filter-btn").forEach(button=>button.addEventListener("click",()=>{
+  activeFilter=button.dataset.filter;
+  $$(".filter-btn").forEach(item=>item.setAttribute("aria-pressed",String(item===button)));
+  filterGallery();
+ }));
+ $("#showFavorites").addEventListener("click",()=>{
+  favoritesOnly=!favoritesOnly;
+  $("#showFavorites").setAttribute("aria-pressed",String(favoritesOnly));
+  $("#showFavorites").textContent=favoritesOnly?"♥ Showing favorites":"♡ Favorites only";
+  filterGallery();
+ });
+ galleryCards.forEach(card=>{
+  $(".favorite-btn",card).addEventListener("click",()=>{
+   const title=card.dataset.title;
+   if(favorites.includes(title))favorites=favorites.filter(item=>item!==title);else favorites.push(title);
+   const saved=safeStorageSet(favoriteKey,JSON.stringify(favorites));
+   updateFavoriteButtons();filterGallery();
+   toast(saved?(favorites.includes(title)?"Added to favorites.":"Removed from favorites."):"Browser storage is unavailable; this change may not persist.");
+  });
+  $(".copy-card",card).addEventListener("click",()=>{
+   copyText(card.dataset.title+"\nCategory: "+card.dataset.category+"\n"+card.dataset.description);
+  });
+  $(".share-card",card).addEventListener("click",()=>{
+   const description=card.dataset.title+" — "+card.dataset.description+" | ROSEÉ — The Beauty Atelier";
+   const url="https://www.pinterest.com/pin/create/button/?description="+encodeURIComponent(description);
+   try{const opened=window.open(url,"_blank","noopener,noreferrer");if(!opened)toast("Pop-up blocked. Allow pop-ups or use Copy to prepare your description.");else toast("Pinterest opened. Add an image and source URL there if requested.");}
+   catch(error){toast("Pinterest could not open. Use Copy to prepare your description.");}
+  });
+ });
+ updateFavoriteButtons();filterGallery();
+
+ $$("[data-category-link]").forEach(link=>link.addEventListener("click",()=>{
+  const category=link.dataset.categoryLink;
+  activeFilter=category;
+  $$(".filter-btn").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.filter===category)));
+  $("#gallerySearch").value="";
+  favoritesOnly=false;$("#showFavorites").setAttribute("aria-pressed","false");$("#showFavorites").textContent="♡ Favorites only";
+  filterGallery();
+ }));
+
+ const menuBtn=$("#menuBtn"),navlinks=$("#navlinks");
+ menuBtn.addEventListener("click",()=>{
+  const open=navlinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(open));
+  menuBtn.setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");
+  menuBtn.textContent=open?"×":"☰";
+ });
+ $$("#navlinks a").forEach(link=>link.addEventListener("click",()=>{
+  navlinks.classList.remove("open");menuBtn.setAttribute("aria-expanded","false");
+  menuBtn.setAttribute("aria-label","Open navigation menu");menuBtn.textContent="☰";
+ }));
+
+ $("#contactForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const name=$("#contactName").value.trim();
+  const email=$("#contactEmail").value.trim();
+  const topic=$("#contactTopic").value;
+  const message=$("#contactMessage").value.trim();
+  const status=$("#contactStatus");
+  if(message.length<5||message.length>3000){status.textContent="Please enter a message between 5 and 3000 characters.";return;}
+  if(name.length>80||email.length>160){status.textContent="Please shorten your name or email address.";return;}
+  if(email&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){status.textContent="Please enter a valid email address or leave it blank.";return;}
+  const body="Topic: "+topic+"\nName: "+(name||"Not provided")+"\nReply email: "+(email||"Not provided")+"\n\n"+message;
+  const mailto="mailto:chief0000019@gmail.com?subject="+encodeURIComponent("ROSEÉ website — "+topic)+"&body="+encodeURIComponent(body);
+  status.textContent="Opening your email application. Review the draft and press Send there; nothing has been sent by this webpage.";
+  try{window.location.href=mailto;}catch(error){status.textContent="Could not open your email application. Please use the direct email link shown on this page.";}
+ });
+
+ const backTop=$("#backTop");
+ function updateBackTop(){backTop.classList.toggle("show",window.scrollY>500)}
+ window.addEventListener("scroll",updateBackTop,{passive:true});
+ backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
+ updateBackTop();
+
+ // Keep the interface usable when optional browser features are unavailable.
+ if(!navigator.clipboard && !document.execCommand){
+  $$("button").forEach(button=>{
+   if(/copy/i.test(button.textContent))button.title="Clipboard access may be unavailable in this browser.";
+  });
+ }
+})();
+</script>
+</body>
+</html>
